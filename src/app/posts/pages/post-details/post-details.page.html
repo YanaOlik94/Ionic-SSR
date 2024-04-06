@@ -1,0 +1,33 @@
+<ion-header class="header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-back-button icon="chevron-back-outline" text="" defaultHref="posts"></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="btn-title">{{'BUTTONS.BACK' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container" *ngIf="selectedPost$ | async as post">
+    <ion-card color="light">
+      <ion-card-header>
+        <ion-card-title>
+          {{ post.id}}
+          {{ post.title }}
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p class="content">{{post.body}}</p>
+        <div class="info">
+          <strong>12/02/2024</strong>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+
+

@@ -1,0 +1,31 @@
+{
+  "HEADER": {
+    "TITLE": {
+      "ADD_POST": "Add Post"
+    }
+  },
+  "BUTTONS": {
+    "ADD": "Add",
+    "CANCEL": "Cancel",
+    "BACK": "Back"
+  },
+  "CARDS": {
+    "CARD_TITLE": "Post Page",
+    "CARD_CONTENT": "Welcome to post.com. Be aware of latest news, share them with friends, write your own posts",
+    "CARD_LINK": {
+      "READ_MORE": "Read more"
+    },
+    "CARD_ACTIONS": {
+      "GO_TO": "Go to all Posts",
+      "SEE_RECENT" : "See recent Posts"
+    }
+  },
+  "ALERT": {
+    "TITLE": "Add new post",
+    "PH_TITLE": "Title",
+    "PH_AUTHOR": "Author",
+    "PH_DATE": "Date",
+    "PH_CONTENT": "Post",
+    "PH_ID": "Id"
+  }
+}

@@ -1,0 +1,45 @@
+<ion-header class="header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="home"></ion-back-button>
+      <ion-button class="btn-add" color="primary" (click)="presentAlertPrompt()">
+        + {{'HEADER.TITLE.ADD_POST' | translate}}</ion-button>
+    </ion-buttons>
+    <ion-toggle slot="end" id="switchMode" (ionChange)="changeLanguage($event)" [checked]="isChecked">
+      <span *ngIf="isChecked">UA</span>
+      <span *ngIf="!isChecked">EN</span>
+    </ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<div class="overlay" *ngIf="isLoading$ | async">
+  <div class="loader-wrapper">
+    <div class="custom-loader"></div>
+  </div>
+</div>
+
+<div *ngIf="error$ | async as error">{{error}}</div>
+
+<div class="container">
+  <ion-card *ngFor="let post of posts$ | async" color="light">
+    <ion-card-header>
+      <ion-card-title>
+        {{ post.id}}
+        {{ post.title }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{post.body  | maxLength: 120}}</p>
+      <div class="info">
+        <strong>12/02/2024</strong>
+      </div>
+
+      <div class="action">
+        <a (click)="getPostById(post.id)" class="link">{{'CARDS.CARD_LINK.READ_MORE' | translate}}</a>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+</div>
+
